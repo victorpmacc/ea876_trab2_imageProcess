@@ -17,8 +17,8 @@ int main() {
   
   /* A lógica seguirá execução de 3 processos simultâneos, um para cada matriz de cores (R, G, e B)*/
   imagem img, imgprocessada;
-  img = abrir_imagem("../data/cachorro.jpg");
-  imgprocessada = abrir_imagem("../data/cachorro.jpg");
+  img = abrir_imagem("data/cachorro.jpg");
+  imgprocessada = abrir_imagem("data/cachorro.jpg");
   
   float* matrizR = (float*) mmap(NULL, sizeof(float) * img.height * img.width, protection, visibility, 0, 0);
   float* matrizG = (float*) mmap(NULL, sizeof(float) * img.height * img.width, protection, visibility, 0, 0);
@@ -131,13 +131,13 @@ int main() {
   
 
   /*jogar os valores do vetor para um arquivo de leitura*/
-  FILE *fp = fopen("../doc/tempos_multiprocess.txt", "wb");
+  FILE *fp = fopen("doc/tempos_multiprocess.txt", "wb");
   for(int w = 0; w < QTTEST-1; w++)
     fprintf(fp, "%f,", vetor_tempos[w]);
   fprintf(fp, "%f", vetor_tempos[QTTEST-1]);
   fclose(fp);
   
-  salvar_imagem("../out/cachorro-out-multiprocess.jpg", &imgprocessada);
+  salvar_imagem("out/cachorro-out-multiprocess.jpg", &imgprocessada);
   liberar_imagem(&imgprocessada);
   return 0;
 }

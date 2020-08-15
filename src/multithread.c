@@ -38,7 +38,7 @@ void* funcao_thread(void *arg){
 
 
 int main() {
-  img = abrir_imagem("../data/cachorro.jpg");
+  img = abrir_imagem("data/cachorro.jpg");
   
   pthread_t pr, pg, pb;
   
@@ -81,13 +81,13 @@ int main() {
   }
   
   /*jogar os valores do vetor para um arquivo de leitura*/
-  FILE *fp = fopen("../doc/tempos_multithread.txt", "wb");
+  FILE *fp = fopen("doc/tempos_multithread.txt", "wb");
   for(int w = 0; w < QTTEST-1; w++)
     fprintf(fp, "%f,", vetor_tempos[w]);
   fprintf(fp, "%f", vetor_tempos[QTTEST-1]);
   fclose(fp);
   
-  salvar_imagem("../out/cachorro-out-multithread.jpg", &img);
+  salvar_imagem("out/cachorro-out-multithread.jpg", &img);
   liberar_imagem(&img);
   return 0;
 }

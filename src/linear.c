@@ -11,8 +11,8 @@
 int main() {
   imagem img, imgprocessada;
   
-  img = abrir_imagem("../data/cachorro.jpg");
-  imgprocessada = abrir_imagem("../data/cachorro.jpg");
+  img = abrir_imagem("data/cachorro.jpg");
+  imgprocessada = abrir_imagem("data/cachorro.jpg");
   
   // Registro das somas dos valores dos pixels e a quantidade, para cálculo da média
   float R = 0, G = 0, B = 0, npixel = 0;
@@ -94,14 +94,14 @@ int main() {
 }
 
   /*jogar os valores do vetor para um arquivo de leitura*/
-  FILE *fp = fopen("../doc/tempos_linear.txt", "wb");
+  FILE *fp = fopen("doc/tempos_linear.txt", "wb");
   for(int w = 0; w < QTTEST-1; w++)
     fprintf(fp, "%f,", vetor_tempos[w]);
   fprintf(fp, "%f", vetor_tempos[QTTEST-1]);
   fclose(fp);
   
   /*salvar a imagem trabalhada*/
-  salvar_imagem("../out/cachorro-out_linear.jpg", &imgprocessada);
+  salvar_imagem("out/cachorro-out_linear.jpg", &imgprocessada);
   liberar_imagem(&imgprocessada); 
   return 0;
 }

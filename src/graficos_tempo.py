@@ -12,11 +12,11 @@ def annotate_boxplot(bpdict, texto ,annotate_params=None,
     plt.annotate(texto, (x_loc + 1 + x_offset, bpdict['medians'][x_loc].get_ydata()[0]), **annotate_params)
 
 #Leitura dos registros de tempo
-tempos_linear = open("../doc/tempos_linear.txt", "r").read().split(',')
+tempos_linear = open("doc/tempos_linear.txt", "r").read().split(',')
 t1 = list(map(float, tempos_linear))
-tempos_multiprocess = open("../doc/tempos_multiprocess.txt", "r").read().split(',')
+tempos_multiprocess = open("doc/tempos_multiprocess.txt", "r").read().split(',')
 t2 = list(map(float, tempos_multiprocess))
-tempos_multithread = open("../doc/tempos_multithread.txt", "r").read().split(',')
+tempos_multithread = open("doc/tempos_multithread.txt", "r").read().split(',')
 t3= list(map(float, tempos_multithread))
 
 t4 = [t1, t2, t3]
@@ -49,5 +49,5 @@ plt.ylabel("segundos")
 plt.xlabel("versão")
 
 #Download do pdf com a figura
-fig.savefig('../doc/resultados_nteste100.pdf', bbox_inches='tight')
+fig.savefig('doc/resultados.pdf', bbox_inches='tight')
 
