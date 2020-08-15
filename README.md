@@ -18,8 +18,8 @@ A imagem resultado (blur aplicado) para cada versão é produzida em `out`.
 
 No diretório raíz:
 
-	`make`: compila as versões `.c`;
+  `make`: compila as versões `.c`;
 
-	`make test`: executa as 3 versões e gera gráfico comparativo `resultado` em `doc`. OBS: Checar `QTTEST` em cada código `.c` antes de compilar. Pode demorar alguns minutos dependendo do número de testes (QTTEST setado originalmente para 6);
+  `make test`: executa as 3 versões e gera gráfico comparativo `resultado` em `doc`. OBS: Checar `QTTEST` em cada código `.c` antes de compilar. Pode demorar alguns minutos dependendo do número de testes (QTTEST setado originalmente para 6);
 
-	`make clean`: remove os executáveis da pasta `src`, as marcações de tempo de `doc` (mantém os pdf gerados) e as imagens com blur de `out`;
+  `make clean`: remove os executáveis da pasta `src`, as marcações de tempo de `doc` (mantém os pdf gerados) e as imagens com blur de `out`;
